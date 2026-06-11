@@ -1,0 +1,11 @@
+NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                  IMAGES                                                SELECTOR
+deployment.apps/demo-private-registry-app   1/1     1            1           2d10h   demo-private-registry-app   10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0   app=demo-private-registry-app
+
+NAME                                                   DESIRED   CURRENT   READY   AGE     CONTAINERS                  IMAGES                                                   SELECTOR
+replicaset.apps/demo-private-registry-app-554c5fc9f8   0         0         0       116s    demo-private-registry-app   10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0      app=demo-private-registry-app,pod-template-hash=554c5fc9f8
+replicaset.apps/demo-private-registry-app-5d56554c65   0         0         0       2d10h   demo-private-registry-app   10.10.1.101:5050/root/demo-private-registry-app:v1.0.0   app=demo-private-registry-app,pod-template-hash=5d56554c65
+replicaset.apps/demo-private-registry-app-659569db86   0         0         0       2d      demo-private-registry-app   10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0      app=demo-private-registry-app,pod-template-hash=659569db86
+replicaset.apps/demo-private-registry-app-7c47d58b7f   1         1         1       91s     demo-private-registry-app   10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0      app=demo-private-registry-app,pod-template-hash=7c47d58b7f
+
+NAME                                             READY   STATUS    RESTARTS   AGE   IP               NODE           NOMINATED NODE   READINESS GATES
+pod/demo-private-registry-app-7c47d58b7f-xc87f   1/1     Running   0          91s   192.168.230.18   k8s-worker-1   <none>           <none>

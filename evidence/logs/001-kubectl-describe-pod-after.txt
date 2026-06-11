@@ -1,0 +1,57 @@
+Name:             demo-private-registry-app-7c47d58b7f-xc87f
+Namespace:        devops-lab
+Priority:         0
+Service Account:  default
+Node:             k8s-worker-1/10.10.2.71
+Start Time:       Thu, 11 Jun 2026 14:41:26 +0000
+Labels:           app=demo-private-registry-app
+                  pod-template-hash=7c47d58b7f
+Annotations:      cni.projectcalico.org/containerID: a110a400ad33066a45645954b77dbafb5dae20f6e1105b4c760008014170b492
+                  cni.projectcalico.org/podIP: 192.168.230.18/32
+                  cni.projectcalico.org/podIPs: 192.168.230.18/32
+                  kubectl.kubernetes.io/restartedAt: 2026-06-11T14:41:26Z
+Status:           Running
+IP:               192.168.230.18
+IPs:
+  IP:           192.168.230.18
+Controlled By:  ReplicaSet/demo-private-registry-app-7c47d58b7f
+Containers:
+  demo-private-registry-app:
+    Container ID:   containerd://ba72ee0562c39b8c145bb32558a1bc7963d13e149104d7bf69ac3ad45c188bcf
+    Image:          10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0
+    Image ID:       10.10.1.101:5050/kujal/demo-nginx/demo-nginx@sha256:e636ffa30ae136a3fe9458d766d9ace1dffea4fa2293a412d1c02f6b9d8db6b9
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Jun 2026 14:41:27 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-mj246 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-mj246:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  91s   default-scheduler  Successfully assigned devops-lab/demo-private-registry-app-7c47d58b7f-xc87f to k8s-worker-1
+  Normal  Pulling    91s   kubelet            Pulling image "10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0"
+  Normal  Pulled     90s   kubelet            Successfully pulled image "10.10.1.101:5050/kujal/demo-nginx/demo-nginx:v1.0.0" in 171ms (171ms including waiting)
+  Normal  Created    90s   kubelet            Created container: demo-private-registry-app
+  Normal  Started    90s   kubelet            Started container demo-private-registry-app

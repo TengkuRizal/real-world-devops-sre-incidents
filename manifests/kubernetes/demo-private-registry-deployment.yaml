@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-private-registry-app
+  namespace: devops-lab
+  labels:
+    app: demo-private-registry-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-private-registry-app
+  template:
+    metadata:
+      labels:
+        app: demo-private-registry-app
+    spec:
+      containers:
+        - name: demo-private-registry-app
+          image: 10.10.1.101:5050/root/demo-private-registry-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

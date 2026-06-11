@@ -1,0 +1,57 @@
+Name:             demo-private-registry-app-5d56554c65-lxxhq
+Namespace:        devops-lab
+Priority:         0
+Service Account:  default
+Node:             k8s-worker-1/10.10.2.71
+Start Time:       Tue, 09 Jun 2026 04:38:16 +0000
+Labels:           app=demo-private-registry-app
+                  pod-template-hash=5d56554c65
+Annotations:      cni.projectcalico.org/containerID: 45f232537a997618d8b8f0c6bf510c752976b4147560c6670f6c402342432a9d
+                  cni.projectcalico.org/podIP: 192.168.230.17/32
+                  cni.projectcalico.org/podIPs: 192.168.230.17/32
+Status:           Pending
+IP:               192.168.230.17
+IPs:
+  IP:           192.168.230.17
+Controlled By:  ReplicaSet/demo-private-registry-app-5d56554c65
+Containers:
+  demo-private-registry-app:
+    Container ID:   
+    Image:          10.10.1.101:5050/root/demo-private-registry-app:v1.0.0
+    Image ID:       
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-z6s2w (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-z6s2w:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  54m                    default-scheduler  Successfully assigned devops-lab/demo-private-registry-app-5d56554c65-lxxhq to k8s-worker-1
+  Warning  Failed     53m (x6 over 54m)      kubelet            Error: ImagePullBackOff
+  Normal   Pulling    53m (x4 over 54m)      kubelet            Pulling image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0"
+  Warning  Failed     53m (x4 over 54m)      kubelet            Failed to pull image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to pull and unpack image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to resolve reference "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to authorize: failed to fetch anonymous token: unexpected status from GET request to http://10.10.1.101/jwt/auth?scope=repository%3Aroot%2Fdemo-private-registry-app%3Apull&service=container_registry: 403 Forbidden
+  Warning  Failed     53m (x4 over 54m)      kubelet            Error: ErrImagePull
+  Normal   BackOff    4m37s (x221 over 54m)  kubelet            Back-off pulling image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0"

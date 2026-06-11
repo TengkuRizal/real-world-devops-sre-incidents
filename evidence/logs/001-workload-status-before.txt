@@ -1,0 +1,8 @@
+NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                  IMAGES                                                   SELECTOR
+deployment.apps/demo-private-registry-app   0/1     1            0           54m   demo-private-registry-app   10.10.1.101:5050/root/demo-private-registry-app:v1.0.0   app=demo-private-registry-app
+
+NAME                                                   DESIRED   CURRENT   READY   AGE   CONTAINERS                  IMAGES                                                   SELECTOR
+replicaset.apps/demo-private-registry-app-5d56554c65   1         1         0       54m   demo-private-registry-app   10.10.1.101:5050/root/demo-private-registry-app:v1.0.0   app=demo-private-registry-app,pod-template-hash=5d56554c65
+
+NAME                                             READY   STATUS             RESTARTS   AGE   IP               NODE           NOMINATED NODE   READINESS GATES
+pod/demo-private-registry-app-5d56554c65-lxxhq   0/1     ImagePullBackOff   0          54m   192.168.230.17   k8s-worker-1   <none>           <none>

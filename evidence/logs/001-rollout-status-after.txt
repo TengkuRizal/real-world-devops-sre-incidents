@@ -1,0 +1,1 @@
+deployment "demo-private-registry-app" successfully rolled out

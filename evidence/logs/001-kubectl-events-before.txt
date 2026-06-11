@@ -1,0 +1,9 @@
+LAST SEEN   TYPE      REASON              OBJECT                                            MESSAGE
+54m         Normal    Scheduled           pod/demo-private-registry-app-5d56554c65-lxxhq    Successfully assigned devops-lab/demo-private-registry-app-5d56554c65-lxxhq to k8s-worker-1
+54m         Normal    SuccessfulCreate    replicaset/demo-private-registry-app-5d56554c65   Created pod: demo-private-registry-app-5d56554c65-lxxhq
+54m         Normal    ScalingReplicaSet   deployment/demo-private-registry-app              Scaled up replica set demo-private-registry-app-5d56554c65 to 1
+53m         Warning   Failed              pod/demo-private-registry-app-5d56554c65-lxxhq    Error: ImagePullBackOff
+53m         Normal    Pulling             pod/demo-private-registry-app-5d56554c65-lxxhq    Pulling image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0"
+53m         Warning   Failed              pod/demo-private-registry-app-5d56554c65-lxxhq    Failed to pull image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to pull and unpack image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to resolve reference "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0": failed to authorize: failed to fetch anonymous token: unexpected status from GET request to http://10.10.1.101/jwt/auth?scope=repository%3Aroot%2Fdemo-private-registry-app%3Apull&service=container_registry: 403 Forbidden
+53m         Warning   Failed              pod/demo-private-registry-app-5d56554c65-lxxhq    Error: ErrImagePull
+4m37s       Normal    BackOff             pod/demo-private-registry-app-5d56554c65-lxxhq    Back-off pulling image "10.10.1.101:5050/root/demo-private-registry-app:v1.0.0"
