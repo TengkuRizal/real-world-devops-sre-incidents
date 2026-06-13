@@ -66,3 +66,17 @@ This repository does not include:
 - Kubernetes Secret YAML containing encoded credentials
 - Private keys
 - Sensitive screenshots
+
+## Jenkins Homelab Pipeline
+
+This repository is validated using a Jenkins Pipeline from SCM running on a dedicated homelab Jenkins inbound agent.
+
+Pipeline flow:
+
+GitHub Repository → Jenkins Controller → Homelab Jenkins Agent → Validation Pipeline
+
+The pipeline validates repository checkout, Jenkinsfile execution, agent runtime environment, and documentation structure.
+
+Documentation:
+
+- [Jenkins Homelab Pipeline Validation](docs/jenkins-homelab-pipeline.md)
