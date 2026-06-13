@@ -70,3 +70,18 @@ Additional validation stages:
 - Evidence directory validation
 
 This improves the repository from basic CI validation into a more production-style documentation and manifest quality gate.
+
+## Kubernetes Manifest Validation
+
+The pipeline now includes Kubernetes manifest dry-run validation using `kubectl`.
+
+This validates Kubernetes YAML files under:
+
+- `manifests/`
+- `kubernetes/`
+
+Validation command pattern:
+
+- `kubectl apply --dry-run=client --validate=false -f <manifest-file>`
+
+This adds an additional quality gate before incident simulation manifests are accepted into the repository.
