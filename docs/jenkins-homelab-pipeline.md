@@ -57,3 +57,16 @@ This validates a real CI workflow using:
 - Dedicated Jenkins inbound agent
 - Homelab-based CI execution
 - Systemd-managed agent service
+
+## Latest Pipeline Enhancement
+
+The Jenkins pipeline now includes YAML validation to ensure Kubernetes and configuration manifests are syntactically valid before changes are accepted.
+
+Additional validation stages:
+
+- YAML syntax validation
+- Incident report directory validation
+- Runbook directory validation
+- Evidence directory validation
+
+This improves the repository from basic CI validation into a more production-style documentation and manifest quality gate.
